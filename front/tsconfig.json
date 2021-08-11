@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5", // es5로 변환
+    "module": "esnext", // 최신 모듈, "commonjs"
+    "allowJs": true,
+    "jsx": "react", // "preserve" : 결과물이 jsx, "react" : 결과물이 js
+    "strict": true, // 엄격한 타입체크
+    "noUnusedLocals": true, // 사용되지 않는 로컬 변수
+    "noUnusedParameters": true, // 사용되지 않는 매개 변수
+    "noImplicitReturns": true, // 모든 코드 경로를 확인하여 값을 반환하는지 확인
+    "baseUrl": ".",
+    "paths": {
+      // baseUrl + paths : 편하게 import
+      "@hooks/*": ["hooks/*"],
+      "@components/*": ["components/*"],
+      "@layouts/*": ["layouts/*"],
+      "@pages/*": ["pages/*"],
+      "@utils/*": ["utils/*"],
+      "@typings/*": ["typings/*"]
+    },
+    "esModuleInterop": true, // import * as React from 'react';
+    "skipLibCheck": true, // 기본 라이브러리 선언 파일의 타입 체크 건너뛰기
+    "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 구분
+    "resolveJsonModule": true, // json import 가능
+    "moduleResolution": "Node", // 설정한 모듈 문법을 Node가 해석할 수 있게 함
+    "sourceMap": true, // 에러 찾기 편함
+    "lib": ["ES2020", "DOM"] // 최신 문법과 DOM
+  },
+  "exclude": ["node_modules"]
+}

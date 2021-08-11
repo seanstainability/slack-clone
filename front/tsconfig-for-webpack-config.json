@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "Node", // 설정한 모듈 문법을 Node가 해석할 수 있게 함
+    "target": "es5",
+    "esModuleInterop": true
+  }
+}
