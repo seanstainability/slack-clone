@@ -13,7 +13,7 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 const config: Configuration = {
   name: 'slack-clone',
   mode: isDevelopment ? 'development' : 'production',
-  devtool: !isDevelopment ? 'hidden-source-map' : 'inline-source-map',
+  devtool: !isDevelopment ? 'hidden-source-map' : 'inline-source-map', // eval
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
@@ -28,7 +28,7 @@ const config: Configuration = {
   entry: {
     app: './client', // resolve의 extensions에 확장자를 적어주어 확장자 생략
   },
-  target: ['web', 'es5'], // ?
+  target: ['web', 'es5'],
   module: {
     rules: [
       {
@@ -70,7 +70,7 @@ const config: Configuration = {
       //   files: "./src/**/*",
       // },
     }),
-    new webpack.EnvironmentPlugin({ NODE_ENV: isDevelopment ? 'development' : 'production' }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: isDevelopment ? 'development' : 'production' }), // process.env.NODE_ENV를 프론트에서도 접근 가능하도록 해준다.
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -78,7 +78,7 @@ const config: Configuration = {
     publicPath: '/dist/',
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true, // SPA에서는 주소가 하나 밖에 없지만 devServer가 있는 주소인 것 처럼 만들어준다.
     port: 3090,
     publicPath: '/dist/',
     proxy: {
