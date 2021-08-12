@@ -83,6 +83,7 @@ const config: Configuration = {
     publicPath: '/dist/',
     proxy: {
       '/api/': {
+        // 프론트에서 /api/로 시작하는 요청은 3095로 바꿔서 요청을 보내겠다. -> CORS 에러를 프론트에서 스스로 해결하는 방법!
         target: 'http://localhost:3095',
         changeOrigin: true,
         ws: true,

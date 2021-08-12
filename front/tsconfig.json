@@ -5,8 +5,8 @@
     "allowJs": true,
     "jsx": "react", // "preserve" : 결과물이 jsx, "react" : 결과물이 js
     "strict": true, // 엄격한 타입체크
-    "noUnusedLocals": true, // 사용되지 않는 로컬 변수
-    "noUnusedParameters": true, // 사용되지 않는 매개 변수
+    // "noUnusedLocals": true, // 사용되지 않는 로컬 변수
+    // "noUnusedParameters": true, // 사용되지 않는 매개 변수
     "noImplicitReturns": true, // 모든 코드 경로를 확인하여 값을 반환하는지 확인
     "baseUrl": ".",
     "paths": {
